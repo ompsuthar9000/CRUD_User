@@ -55,10 +55,13 @@ Before running the application, ensure you have the following installed:
    npm run dev
 ## Screenshots
 
-### Screenshot 1
+### User Registration
 ![Screenshot 1](./screenshots/screenshot1.png)
 
-### Screenshot 2
+### User list
+![Screenshot 2](./screenshots/screenshot2.png)
+
+### User Update
 ![Screenshot 2](./screenshots/screenshot2.png)
 
 
