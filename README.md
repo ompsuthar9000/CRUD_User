@@ -26,3 +26,32 @@ Before running the application, ensure you have the following installed:
 1. Navigate to the backend directory:
    ```bash
    cd backend
+2. Install dependencies using npm:
+   ```bash
+   npm install
+3. Create a .env file in the backend directory and add the following values:
+   ```bash
+   PORT=3000
+   DBURL="your_mongoodb_url/prectical_task"
+   DBPASSWORD="your_mongodb_password"
+   SERVER_BASE_URL="http://<your_local_ip>:3000"
+   FRONTEND_URL="http://<your_local_ip>:5173"
+4. Start the backend server:
+   ```bash
+   npm run dev
+   
+### Frontend Setup
+1. Navigate to the frontend directory:
+   ```bash
+   cd frontend
+2. Install dependencies using npm:
+   ```bash
+   npm install
+3. Create a .env file in the frontend directory and add the following values:
+   ```bash
+   REACT_APP_API_URL="http://<your_local_ip>:3000"
+4. Start the frontend server:
+   ```bash
+   npm run dev
+
+
