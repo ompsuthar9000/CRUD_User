@@ -59,7 +59,7 @@ Before running the application, ensure you have the following installed:
 ![Screenshot 1](./Screenshot/create.png)
 
 ### User list
-![Screenshot 2](./Screenshot/userList.png)
+![Screenshot 2](./Screenshot/List.png)
 
 ### User Update
 ![Screenshot 3](./Screenshot/editUser.png)
