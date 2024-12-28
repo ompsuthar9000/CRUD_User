@@ -35,7 +35,7 @@ Before running the application, ensure you have the following installed:
    DBURL="your_mongoodb_url/prectical_task"
    DBPASSWORD="your_mongodb_password"
    SERVER_BASE_URL="http://<your_local_ip>:3000"
-   FRONTEND_URL="http://<your_local_ip>:5173"
+   FRONTEND_URL="http://<your_local_ip>:port"
 4. Start the backend server:
    ```bash
    npm run dev
@@ -49,7 +49,7 @@ Before running the application, ensure you have the following installed:
    npm install
 3. Create a .env file in the frontend directory and add the following values:
    ```bash
-   REACT_APP_API_URL="http://<your_local_ip>:3000"
+   VITE_API_URL="http://<your_local_ip>:3000"
 4. Start the frontend server:
    ```bash
    npm run dev
