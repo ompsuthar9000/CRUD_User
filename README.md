@@ -56,7 +56,7 @@ Before running the application, ensure you have the following installed:
 ## Screenshots
 
 ### User Registration
-![Screenshot 1](./screenshots/screenshot1.png)
+![Screenshot 1](./Screenshot from 2024-12-28 09-48-40.png)
 
 ### User list
 ![Screenshot 2](./screenshots/screenshot2.png)
