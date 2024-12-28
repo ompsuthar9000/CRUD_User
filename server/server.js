@@ -25,7 +25,9 @@ connectDb();
 
 // Serve static files from the 'uploads' folder
 app.use("/uploads", express.static(path.resolve("uploads")));
-
+app.get('/', (req, res) => {
+  res.status(200).json({ message: 'Backend is running smoothly!' });
+});
 // Define your user routes
 app.use("/api/user", UserRouter);
 
