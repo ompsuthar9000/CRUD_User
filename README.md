@@ -56,12 +56,12 @@ Before running the application, ensure you have the following installed:
 ## Screenshots
 
 ### User Registration
-![Screenshot 1](./Screenshot from 2024-12-28 09-48-40.png)
+![Screenshot 1](./Screenshot/createUser.png)
 
 ### User list
-![Screenshot 2](./screenshots/screenshot2.png)
+![Screenshot 2](./Screenshot/userList.png)
 
 ### User Update
-![Screenshot 2](./screenshots/screenshot2.png)
+![Screenshot 3](./Screenshot/editUser.png)
 
 
