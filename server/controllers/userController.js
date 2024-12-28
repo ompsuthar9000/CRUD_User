@@ -1,16 +1,12 @@
 import path from 'path';
 import fs from 'fs';
+import { fileURLToPath } from 'url';
 import User from '../schema/UserSchema.js';
 import bcrypt from 'bcryptjs';
 import { IncomingForm } from 'formidable';
 
 // Helper to get the current directory path in ES Module
-const getCurrentDir = (url) => {
-  const _filename = new URL(url).pathname;
-  return path.dirname(_filename);
-};
-
-
+const getCurrentDir = (url) => path.dirname(fileURLToPath(url));
 
 export const registerUser = async (req, res) => {
   const form = new IncomingForm();
@@ -20,7 +16,9 @@ export const registerUser = async (req, res) => {
   form.uploadDir = uploadDir; // Set the upload directory
 
   // Ensure the upload folder exists
-  fs.mkdirSync(uploadDir, { recursive: true });
+  if (!fs.existsSync(uploadDir)) {
+    fs.mkdirSync(uploadDir, { recursive: true });
+  }
 
   form.keepExtensions = true; // Keep the file extension
   form.parse(req, async (err, fields, files) => {
@@ -30,7 +28,7 @@ export const registerUser = async (req, res) => {
     try {
       const { name, email, mobile, password } = fields;
       const file = files.profilePicture[0];
-      
+
       // Get original extension
       const originalExt = path.extname(file.originalFilename || file.filepath);
       const newFilename = `${Date.now()}${originalExt}`; // Unique filename
@@ -41,7 +39,7 @@ export const registerUser = async (req, res) => {
 
       // Construct the public URL for the file
       const publicFilePath = `${process.env.SERVER_BASE_URL}/uploads/${newFilename}`;
-     
+
       // Hash the password
       const hash = await bcrypt.hash(password[0], 10);
 
@@ -77,8 +75,12 @@ export const getAllUsers = async (req, res) => {
 export const updateUser = async (req, res) => {
   try {
     const { id } = req.params;
-    const {mobile,email,name} = req.body; // Extract all fields from the body to be updated
-    const updatedUser = await User.findByIdAndUpdate(id, {mobile,email,name}, { new: true }); // `new: true` returns the updated document
+    const { mobile, email, name } = req.body; // Extract all fields from the body to be updated
+    const updatedUser = await User.findByIdAndUpdate(
+      id,
+      { mobile, email, name },
+      { new: true } // `new: true` returns the updated document
+    );
 
     if (!updatedUser) {
       return res.status(404).json({ message: 'User not found' });
@@ -92,7 +94,6 @@ export const updateUser = async (req, res) => {
 
 // Delete user
 export const deleteUser = async (req, res) => {
-
   try {
     const { id } = req.params;
 
@@ -101,6 +102,6 @@ export const deleteUser = async (req, res) => {
 
     res.status(200).json({ message: 'User deleted successfully' });
   } catch (error) {
-    res.status(500).json( error);
+    res.status(500).json({ error: error.message });
   }
 };
