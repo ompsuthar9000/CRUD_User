@@ -53,5 +53,12 @@ Before running the application, ensure you have the following installed:
 4. Start the frontend server:
    ```bash
    npm run dev
+## Screenshots
+
+### Screenshot 1
+![Screenshot 1](./screenshots/screenshot1.png)
+
+### Screenshot 2
+![Screenshot 2](./screenshots/screenshot2.png)
 
 
