@@ -53,6 +53,8 @@ Before running the application, ensure you have the following installed:
 4. Start the frontend server:
    ```bash
    npm run dev
+### Important Note: The backend blocks requests from localhost due to CORS policy. Always use the format http://127.0.0.1:<port> instead of http://localhost:<port> for both the API URL and frontend base URL in your environment files. This ensures seamless communication between the frontend and backend.
+
 ## Screenshots
 
 ### User Registration
