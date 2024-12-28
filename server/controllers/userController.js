@@ -10,8 +10,7 @@ const getCurrentDir = (url) => {
   return path.dirname(_filename);
 };
 
-// Base URL of the server
-// Update this to your actual server URL
+
 
 export const registerUser = async (req, res) => {
   const form = new IncomingForm();
